@@ -1,0 +1,18 @@
+[workspace]
+resolver = "3"
+members = [ "bin/arb", "crates/logger", "crates/object-pool", "crates/utils", "crates/version",
+]
+
+[workspace.dependencies]
+eyre = "0.6.12"
+
+sui-sdk = { git = "https://github.com/KohTseh/mevsui" }
+sui-types = { git = "https://github.com/KohTseh/mevsui" }
+move-core-types = { git = "https://github.com/KohTseh/mevsui" }
+
+tokio = { version = "1.44.2", features = ["rt-multi-thread", "macros"] }
+tracing = "0.1.37"
+reqwest = { version = "0.12", features = ["json"] }
+burberry = { git = "https://github.com/tonyke-bot/burberry.git", rev = "8bdb3cadf18e9be01622f9acbe562ee2d4f65ac2", default-features = false, features = [
+    "telegram",
+] }
