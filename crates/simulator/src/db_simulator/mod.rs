@@ -279,8 +279,8 @@ impl Simulator for DBSimulator {
             let gas_data = GasData {
                 payment: vec![gas_object_ref],
                 owner: sender,
-                price: tx.price(),
-                budget: tx.get_budget(),
+                price: tx.gas_price(),
+                budget: tx.gas_budget(),
             };
             (gas_data, Some(gas_object))
         } else {
